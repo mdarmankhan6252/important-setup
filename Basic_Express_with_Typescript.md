@@ -57,7 +57,7 @@ For a basic setup, ensure your `tsconfig.json` has at least these settings:
         "module": "nodenext",
         "moduleResolution":"nodenext",
         "outDir": "./dist",
-        "rootDir": "./",
+        "rootDir": "./src",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
@@ -74,7 +74,7 @@ For a basic setup, ensure your `tsconfig.json` has at least these settings:
 
 ### 4. Create the Server File
 
-Create a main server file, for example `server.ts`.
+Create a main server file, for example, `server.ts`.
 
 Add the following basic Express server code to server.ts:
 
@@ -83,10 +83,13 @@ import express, { Request, Response } from 'express';
 
 const app = express();
 
-const port = 3000;
+const port = 5000;
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('Server is Live!');
+    res.status(200).send({
+        success: true,
+        message: "MY SERVER IS LIVE."
+    });
 });
 
 app.listen(port, () => {
@@ -99,11 +102,11 @@ app.listen(port, () => {
 Modify your `package.json` file to add scripts for starting the server using `tsx`
 
 ```json
-"scripts": {
-    "start": "tsx server.ts",
-    "server": "nodemon --exec tsx server.ts",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "server": "nodemon --exec tsx src/server.ts",
     "build": "tsc"
-}
+  },
 ```
 
 ```json
