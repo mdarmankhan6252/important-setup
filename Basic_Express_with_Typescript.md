@@ -104,7 +104,7 @@ Modify your `package.json` file to add scripts for starting the server using `ts
 ```json
   "scripts": {
     "start": "tsx src/server.ts",
-    "server": "nodemon --exec tsx src/server.ts",
+    "dev": "nodemon --exec tsx src/server.ts",
     "build": "tsc"
   },
 ```
