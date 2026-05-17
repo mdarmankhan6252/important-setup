@@ -118,7 +118,7 @@ Modify your `package.json` file to add scripts for starting the server using `ts
 Start your server using the new script:
 
 ```bash
-npm run server
+npm run dev
 ```
 
 You should see the message: Server is running at http://localhost:3000
